@@ -7,7 +7,9 @@ class BookForm(ModelForm): # форма для создания новый за�
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['category'].empty_label = 'Choose category' # вместо "------" в поле выбора категории будет "Choose category"
-    check_box = BooleanField(label='Submit!') # добавит кнопку, которую нужно нажать перед созданием записи
+        self.fields['author'].empty_label = 'Choose author'
+
+    check_box = BooleanField(label='Checked!') # добавит кнопку, которую нужно нажать перед созданием записи
 
     class Meta:
         model = Book

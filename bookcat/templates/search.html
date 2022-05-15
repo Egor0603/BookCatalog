@@ -33,7 +33,9 @@
             {{ book.name|title }}
         </td>
         <td>
-            {{ book.author |title }}
+            {% for p in book.author.all %}
+                {{ p }}
+            {% endfor %}
         </td>
         <td>
             {% for p in book.category.all %}
